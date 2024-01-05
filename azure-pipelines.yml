@@ -27,6 +27,6 @@ steps:
     testid: '1387'
     sendEmail: true
 
-- script: echo Run Id of the LRC rn ${LRC.LRC_RUN_ID}
-  displayname: 'Catch the Run Id of the LRC run'
+- script: echo Run Id of the LRC run ${LRC.LRC_RUN_ID}
+  displayName: 'Catch the Run Id of the LRC run'
   
