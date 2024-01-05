@@ -19,8 +19,8 @@ steps:
   displayName: 'Run a multi-line script'
 
 - task: srlTest@0
+  name: LRC
   inputs:
-    name: LRC
     serverEndpoint: 'LRC Connection'
     tenantid: '688301833'
     projectid: '157'
