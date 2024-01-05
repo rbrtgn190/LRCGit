@@ -1,0 +1,32 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+- task: srlTest@0
+  inputs:
+    name: LRC
+    serverEndpoint: 'LRC Connection'
+    tenantid: '688301833'
+    projectid: '157'
+    testid: '1387'
+    sendEmail: true
+
+- script: echo Run Id of the LRC rn ${LRC.LRC_RUN_ID}
+  displayname: 'Catch the Run Id of the LRC run'
+  
