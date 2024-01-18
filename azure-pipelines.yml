@@ -10,6 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: octane-start-task@2
+  inputs:
+    OctaneServiceConnection: 'jg_ADO_VE'
+    WorkspaceList: '8001'
+    CreatePipelineCheckbox: true
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
@@ -30,3 +36,7 @@ steps:
 - script: echo Run Id of the LRC run ${LRC.LRC_RUN_ID}
   displayName: 'Catch the Run Id of the LRC run'
   
+- task: octane-end-task@2
+  inputs:
+    OctaneServiceConnection: 'jg_ADO_VE'
+    WorkspaceList: '8001'
