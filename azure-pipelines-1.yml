@@ -9,13 +9,14 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+steps:
 - task: octane-start-task@2
   inputs:
     OctaneServiceConnection: 'jg_ADO_VE'
     WorkspaceList: '8001'
     CreatePipelineCheckbox: true
 
-steps:
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
